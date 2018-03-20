@@ -8,12 +8,12 @@
     "vscode": "^1.21.0"
   },
   "categories": [
-    "Other"
+    "Go to Definition", "Find Definiton", "Go to Definition Atom"
   ],
   "activationEvents": [
     "onCommand:extension.movetodefinitions"
   ],
-  "main": "./extension",
+  "main": "./lib/extension",
   "contributes": {
     "commands": [
       {
