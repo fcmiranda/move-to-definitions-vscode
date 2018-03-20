@@ -46,3 +46,13 @@ var argsString = './rg.exe bac\\( c:\\desenv\\projects\\atlas\\client';
 //     if(code == 0)
 //     console.log( `sucesso` );
 // } );
+
+var runRipGrep = child_process.spawn('rg', args);
+                runRipGrep.stdout.setEncoding("UTF-8");
+                runRipGrep.stdout.on('data', data => {
+                    console.log(data);
+                });
+
+                runRipGrep.stderr.on('data', data => {
+                    console.log(data);
+                });

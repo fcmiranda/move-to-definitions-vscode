@@ -50,9 +50,8 @@ function activate(context) {
                 range = document.getWordRangeAtPosition(pos),
                 word = document.getText(range),
                 extensionToScanRegex = path.extname(document.fileName),
-                arr = word.split('\n'),
-                currentPath = process.cwd();
-
+                arr = word.split('\n');
+                
             if (arr.length > 1) {
                 throw new InformationError("There's no word selected");
             }
@@ -84,6 +83,7 @@ function activate(context) {
             });
         } catch (e) {
             e.show && e.show();
+            console.log(e);
         }
     });
     context.subscriptions.push(disposable);

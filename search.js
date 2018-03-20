@@ -1,7 +1,8 @@
 'use strict';
 const vscode = require('vscode'),
 setup = require('./setup'),
-spawn = require('child_process').spawn;
+spawn = require('child_process').spawn,
+rg = require("vscode-ripgrep").rgPath;
 
 function filterMatch(match) {
     return match !== null && match.text.trim().length < 350;
@@ -37,7 +38,7 @@ function ripgrep(fileTypes, regex) {
         ]);
         args.push(...scanPaths);
 
-        var runRipGrep = spawn('C:\\desenv\\ripgrep\\rg.exe', args);
+        var runRipGrep = spawn(rg, args);
         runRipGrep.stdout.setEncoding("UTF-8");
         runRipGrep.stdout.on('data', data => {
             var lines = data.split('\n').map(result => {

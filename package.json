@@ -33,5 +33,7 @@
     "@types/node": "^7.0.43",
     "@types/mocha": "^2.2.42"
   },
-  "dependencies": {}
+  "dependencies": {
+    "vscode-ripgrep": "^0.8.1"
+  }
 }
